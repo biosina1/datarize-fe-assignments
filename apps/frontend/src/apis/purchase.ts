@@ -1,5 +1,5 @@
 import axiosClient from '../clients/axios'
-import { PurchaseFrequency } from '../types/purchase'
+import { PurchaseCustomer, PurchaseFrequency } from '../types/purchase'
 
 interface FetchPurchaseFrequencyParams {
   startDate: string
@@ -15,6 +15,25 @@ export const fetchPurchaseFrequency = ({
       params: {
         from: startDate,
         to: endDate,
+      },
+    })
+    .then((response) => response.data)
+}
+
+interface FetchMostPurchasedCustomerListParams {
+  sortBy: string
+  name: string
+}
+
+export const fetchMostPurchasedCustomerList = ({
+  sortBy,
+  name,
+}: FetchMostPurchasedCustomerListParams): Promise<PurchaseCustomer[]> => {
+  return axiosClient
+    .get(`/api/customers`, {
+      params: {
+        sortBy,
+        name,
       },
     })
     .then((response) => response.data)
