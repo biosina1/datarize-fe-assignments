@@ -1,1 +1,1 @@
-export { default } from './PurchaseDashboard'
+export { default } from './PurchaseDashboardView'

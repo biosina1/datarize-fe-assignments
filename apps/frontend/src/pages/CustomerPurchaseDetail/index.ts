@@ -1,1 +1,1 @@
-export { default } from './CustomerPurchaseDetail'
+export { default } from './CustomerPurchaseDetailView'
