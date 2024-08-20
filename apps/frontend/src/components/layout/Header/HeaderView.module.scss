@@ -1,0 +1,10 @@
+.header {
+  border-bottom: 1px solid #f1f3f5;
+  padding: 20px;
+  // height: 65px;
+
+  & > h1 {
+    font-size: 25px;
+    font-weight: 600;
+  }
+}
