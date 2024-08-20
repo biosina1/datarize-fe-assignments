@@ -1,4 +1,6 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
+import { AxiosError } from 'axios'
+import { PurchaseFrequency } from '../../types/purchase'
 import { fetchPurchaseFrequency } from '../../apis/purchase'
 
 interface UseFetchPurchaseFrequencyParams {
@@ -7,7 +9,7 @@ interface UseFetchPurchaseFrequencyParams {
 }
 
 const useFetchPurchaseFrequency = ({ startDate, endDate }: UseFetchPurchaseFrequencyParams) =>
-  useSuspenseQuery({
+  useSuspenseQuery<PurchaseFrequency[], AxiosError>({
     queryKey: ['purchaseFrequency', startDate, endDate],
     queryFn: () => fetchPurchaseFrequency({ startDate, endDate }),
   })

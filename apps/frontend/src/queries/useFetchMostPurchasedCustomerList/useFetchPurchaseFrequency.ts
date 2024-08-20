@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { AxiosError } from 'axios'
-import { fetchMostPurchasedCustomerList } from '../../apis/purchase'
 import { PurchaseCustomer } from '../../types/purchase'
+import { fetchMostPurchasedCustomerList } from '../../apis/purchase'
 
 interface useFetchMostPurchasedCustomerListParams {
   sortBy: string
