@@ -1,13 +1,16 @@
 import { Suspense } from 'react'
-import PurchaseFrequencyChart from '../../components/dashboard/PurchaseFrequencyChart'
 import Spinner from '../../components/shared/Spinner'
+import QueryErrorBoundary from '../../components/error/QueryErrorBoundary'
+import PurchaseFrequencyChart from '../../components/dashboard/PurchaseFrequencyChart'
 
 const Dashboard = () => {
   return (
     <div>
-      <Suspense fallback={<Spinner />}>
-        <PurchaseFrequencyChart />
-      </Suspense>
+      <QueryErrorBoundary>
+        <Suspense fallback={<Spinner />}>
+          <PurchaseFrequencyChart />
+        </Suspense>
+      </QueryErrorBoundary>
     </div>
   )
 }
