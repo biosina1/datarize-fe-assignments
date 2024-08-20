@@ -17,7 +17,9 @@ const MostPurchasedCustomerList = () => {
 
   if (error) return <ErrorFallback error={error} />
 
-  return <MostPurchasedCustomerListView data={data ?? []} />
+  if (!data || !data.length) return '아이템이 존재하지 않습니다.'
+
+  return <MostPurchasedCustomerListView data={data} />
 }
 
 export default MostPurchasedCustomerList

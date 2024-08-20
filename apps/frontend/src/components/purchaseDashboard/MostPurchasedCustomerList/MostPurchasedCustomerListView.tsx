@@ -1,19 +1,17 @@
-import { PurchaseCustomer } from '../../../types/purchase'
+import { Customer } from '../../../types/customer'
 import MostPurchasedCustomerItem from './MostPurchasedCustomerItem'
 
 interface MostPurchasedCustomerListViewProps {
-  data: PurchaseCustomer[]
+  data: Customer[]
 }
 
 const MostPurchasedCustomerListView = ({ data }: MostPurchasedCustomerListViewProps) => {
   return (
-    <>
-      <ul>
-        {data?.map((customer) => (
-          <MostPurchasedCustomerItem key={customer.id} data={customer} />
-        ))}
-      </ul>
-    </>
+    <ul>
+      {data?.map((customer) => (
+        <MostPurchasedCustomerItem key={customer.id} data={customer} />
+      ))}
+    </ul>
   )
 }
 

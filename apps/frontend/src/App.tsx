@@ -1,13 +1,13 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import Dashboard from './pages/Dashboard'
-import PurchaseDetail from './pages/PurchaseDetail'
+import PurchaseDashboard from './pages/PurchaseDashboard'
+import CustomerPurchaseDetail from './pages/CustomerPurchaseDetail'
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/purchaseDetail/:customerId" element={<PurchaseDetail />} />
+      <Route path="/" element={<Navigate to="/purchase-dashboard" />} />
+      <Route path="/purchase-dashboard" element={<PurchaseDashboard />} />
+      <Route path="/customers/:customerId/purchases" element={<CustomerPurchaseDetail />} />
     </Routes>
   )
 }

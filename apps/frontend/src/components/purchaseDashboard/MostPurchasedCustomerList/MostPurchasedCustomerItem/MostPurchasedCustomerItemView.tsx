@@ -1,7 +1,7 @@
-import { PurchaseCustomer } from '../../../../types/purchase'
+import { Customer } from '../../../../types/customer'
 
 interface MostPurchasedCustomerItemViewProps {
-  data: PurchaseCustomer
+  data: Customer
   onItemClick: () => void
 }
 

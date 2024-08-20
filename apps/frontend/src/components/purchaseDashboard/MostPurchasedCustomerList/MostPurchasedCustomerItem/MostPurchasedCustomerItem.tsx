@@ -1,16 +1,16 @@
 import { useNavigate } from 'react-router-dom'
-import { PurchaseCustomer } from '../../../../types/purchase'
+import { Customer } from '../../../../types/customer'
 import MostPurchasedCustomerItemView from './MostPurchasedCustomerItemView'
 
 interface MostPurchasedCustomerItemProps {
-  data: PurchaseCustomer
+  data: Customer
 }
 
 const MostPurchasedCustomerItem = ({ data }: MostPurchasedCustomerItemProps) => {
   const navigate = useNavigate()
 
   const handleItemClick = () => {
-    navigate(`/purchaseDetail/${data.id}`)
+    navigate(`/customers/${data.id}/purchases`)
   }
 
   return <MostPurchasedCustomerItemView data={data} onItemClick={handleItemClick} />
