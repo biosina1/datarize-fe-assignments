@@ -1,7 +1,7 @@
 import styles from './ErrorFallbackView.module.scss'
 
 interface ErrorFallbackProps {
-  onReset: React.MouseEventHandler<HTMLButtonElement>
+  onReset?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const ErrorFallbackView = ({ onReset }: ErrorFallbackProps) => {
@@ -9,7 +9,7 @@ const ErrorFallbackView = ({ onReset }: ErrorFallbackProps) => {
     <div className={styles.errorFallback}>
       <h2>오류 발생</h2>
       <p>오류 메시지</p>
-      <button onClick={onReset}>API 호출 재시도</button>
+      {onReset && <button onClick={onReset}>API 호출 재시도</button>}
     </div>
   )
 }

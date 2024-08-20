@@ -1,5 +1,7 @@
-import { useSuspenseQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
+import { AxiosError } from 'axios'
 import { fetchMostPurchasedCustomerList } from '../../apis/purchase'
+import { PurchaseCustomer } from '../../types/purchase'
 
 interface useFetchMostPurchasedCustomerListParams {
   sortBy: string
@@ -7,7 +9,7 @@ interface useFetchMostPurchasedCustomerListParams {
 }
 
 const useFetchMostPurchasedCustomerList = ({ sortBy, name }: useFetchMostPurchasedCustomerListParams) =>
-  useSuspenseQuery({
+  useQuery<PurchaseCustomer[], AxiosError>({
     queryKey: ['mostPurchasedCustomerList', sortBy, name],
     queryFn: () => fetchMostPurchasedCustomerList({ sortBy, name }),
   })

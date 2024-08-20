@@ -3,7 +3,7 @@ import ErrorFallbackView from './ErrorFallbackView'
 
 interface ErrorFallbackProps {
   error: AxiosError | Error | null
-  onReset: () => void
+  onReset?: () => void
 }
 
 const ErrorFallback = ({ onReset }: ErrorFallbackProps) => {
