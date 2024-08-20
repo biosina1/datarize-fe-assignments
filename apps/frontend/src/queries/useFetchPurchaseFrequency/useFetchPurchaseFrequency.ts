@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
+import { useSuspenseQuery } from '@tanstack/react-query'
 import { fetchPurchaseFrequency } from '../../apis/purchase'
 
 interface UseFetchPurchaseFrequencyParams {
@@ -7,7 +7,7 @@ interface UseFetchPurchaseFrequencyParams {
 }
 
 const useFetchPurchaseFrequency = ({ startDate, endDate }: UseFetchPurchaseFrequencyParams) =>
-  useQuery({
+  useSuspenseQuery({
     queryKey: ['purchaseFrequency', startDate, endDate],
     queryFn: () => fetchPurchaseFrequency({ startDate, endDate }),
   })

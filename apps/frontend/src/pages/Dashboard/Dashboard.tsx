@@ -1,9 +1,13 @@
+import { Suspense } from 'react'
 import PurchaseFrequencyChart from '../../components/dashboard/PurchaseFrequencyChart'
+import Spinner from '../../components/shared/Spinner'
 
 const Dashboard = () => {
   return (
     <div>
-      <PurchaseFrequencyChart />
+      <Suspense fallback={<Spinner />}>
+        <PurchaseFrequencyChart />
+      </Suspense>
     </div>
   )
 }
