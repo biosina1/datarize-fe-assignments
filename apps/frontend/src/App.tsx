@@ -1,7 +1,13 @@
-import styles from './App.module.scss'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
 
 function App() {
-  return <div className={styles.app}>App</div>
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/dashboard" />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  )
 }
 
 export default App
