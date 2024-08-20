@@ -1,0 +1,15 @@
+.customerNameSearchForm {
+  display: flex;
+  gap: 10px;
+
+  .nameInput {
+    padding: 4px;
+  }
+
+  .searchButton {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: #36ba98;
+  }
+}

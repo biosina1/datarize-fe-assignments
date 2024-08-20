@@ -1,7 +1,7 @@
 import { useState } from 'react'
+import { DateRange } from '../../shared/DateRangePicker'
 import PurchaseFrequencyChartView from './PurchaseFrequencyChartView'
 import useFetchPurchaseFrequency from '../../../queries/useFetchPurchaseFrequency'
-import { DateRange } from '../../shared/DateRangePicker'
 
 const DEFAULT_DATE_RANGE = {
   startDate: '2024-07-01',

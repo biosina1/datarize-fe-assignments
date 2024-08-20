@@ -1,3 +1,5 @@
+import styles from './DateRangePickerView.module.scss'
+
 interface DateRangePickerViewProps {
   startDate: string
   endDate: string
@@ -12,17 +14,16 @@ const DateRangePickerView = ({
   handleEndDateChange,
 }: DateRangePickerViewProps) => {
   return (
-    <>
+    <div className={styles.dateRangePicker}>
       <label>
         시작 날짜:
         <input type="date" value={startDate} onChange={handleStartDateChange} />
       </label>
-
       <label>
         종료 날짜:
         <input type="date" min={startDate} value={endDate} onChange={handleEndDateChange} />
       </label>
-    </>
+    </div>
   )
 }
 

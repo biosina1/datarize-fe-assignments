@@ -1,32 +1,39 @@
-.purchaseItem {
+.customerPurchaseItem {
   display: flex;
   align-items: center;
   gap: 20px;
   min-width: fit-content;
-  border: 1px solid lightgray;
+  border: 1px solid lightpink;
   border-radius: 8px;
+  background-color: #ffffff;
   padding: 20px;
   font-weight: 500;
-
-  .date {
-    font-size: 24px;
-  }
-
-  .product {
-    font-size: 20px;
-  }
-
-  .price {
-    color: lightslategray;
-
-    .quantity {
-      color: lightskyblue;
-    }
-  }
 
   & > img {
     width: 150px;
     height: 150px;
     border-radius: 8px;
+  }
+
+  .infos {
+    & > *:not(:last-of-type) {
+      margin-bottom: 26px;
+    }
+
+    .date {
+      font-size: 24px;
+    }
+
+    .product {
+      font-size: 20px;
+    }
+
+    .price {
+      color: lightslategray;
+    }
+
+    .quantity {
+      color: lightskyblue;
+    }
   }
 }

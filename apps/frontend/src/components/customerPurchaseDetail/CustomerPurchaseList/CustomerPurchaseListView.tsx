@@ -1,3 +1,4 @@
+import styles from './CustomerPurchaseListView.module.scss'
 import { CustomerPurchase } from '../../../types/customer'
 import CustomerPurchaseItem from './CustomerPurchaseItem'
 
@@ -7,7 +8,7 @@ interface CustomerPurchaseListViewProps {
 
 const CustomerPurchaseListView = ({ data }: CustomerPurchaseListViewProps) => {
   return (
-    <ul>
+    <ul className={styles.customerPurchaseList}>
       {data?.map((purchase) => (
         <CustomerPurchaseItem key={purchase.date} data={purchase} />
       ))}

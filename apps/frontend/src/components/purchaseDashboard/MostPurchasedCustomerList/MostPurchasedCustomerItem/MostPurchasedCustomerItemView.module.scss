@@ -1,0 +1,9 @@
+.mostPurchasedCustomerItem {
+  border: 1px solid lightpink;
+  border-radius: 4px;
+  padding: 10px;
+
+  & > p:not(:last-of-type) {
+    margin-bottom: 6px;
+  }
+}

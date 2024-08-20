@@ -1,0 +1,8 @@
+.customerPurchaseList {
+  height: 100%;
+  overflow: auto;
+
+  & > li:not(:last-of-type) {
+    margin-bottom: 12px;
+  }
+}

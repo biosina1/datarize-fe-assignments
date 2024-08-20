@@ -1,3 +1,4 @@
+import styles from './MostPurchasedCustomerListView.module.scss'
 import { Customer } from '../../../types/customer'
 import MostPurchasedCustomerItem from './MostPurchasedCustomerItem'
 
@@ -7,7 +8,7 @@ interface MostPurchasedCustomerListViewProps {
 
 const MostPurchasedCustomerListView = ({ data }: MostPurchasedCustomerListViewProps) => {
   return (
-    <ul>
+    <ul className={styles.mostPurchasedCustomerList}>
       {data?.map((customer) => (
         <MostPurchasedCustomerItem key={customer.id} data={customer} />
       ))}

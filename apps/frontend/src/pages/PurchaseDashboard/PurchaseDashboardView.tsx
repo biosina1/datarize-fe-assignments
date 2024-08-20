@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import styles from './PurchaseDashboardView.module.scss'
 import { CustomerSearchProvider } from '../../contexts/dashboard/CustomerSearchContext'
 import Spinner from '../../components/shared/Spinner'
 import QueryErrorBoundary from '../../components/error/QueryErrorBoundary'
@@ -7,21 +8,24 @@ import MostPurchasedCustomerList from '../../components/purchaseDashboard/MostPu
 import CustomerSortSelect from '../../components/purchaseDashboard/MostPurchasedCustomerList/CustomerSortSelect'
 import CustomerNameSearchForm from '../../components/purchaseDashboard/MostPurchasedCustomerList/CustomerNameSearchForm'
 
-const PurchaseDashboard = () => {
+const PurchaseDashboardView = () => {
   return (
-    <>
+    <div className={styles.purchaseDashboard}>
       <QueryErrorBoundary>
         <Suspense fallback={<Spinner />}>
           <PurchaseFrequencyChart />
         </Suspense>
       </QueryErrorBoundary>
-      <CustomerSearchProvider>
-        <CustomerNameSearchForm />
-        <CustomerSortSelect />
-        <MostPurchasedCustomerList />
-      </CustomerSearchProvider>
-    </>
+
+      <div className={styles.customerListWrapper}>
+        <CustomerSearchProvider>
+          <CustomerNameSearchForm />
+          <CustomerSortSelect />
+          <MostPurchasedCustomerList />
+        </CustomerSearchProvider>
+      </div>
+    </div>
   )
 }
 
-export default PurchaseDashboard
+export default PurchaseDashboardView

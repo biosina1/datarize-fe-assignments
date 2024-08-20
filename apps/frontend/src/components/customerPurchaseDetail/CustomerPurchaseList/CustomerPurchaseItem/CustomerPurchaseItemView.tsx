@@ -7,9 +7,9 @@ interface CustomerPurchaseItemViewProps {
 
 const CustomerPurchaseItemView = ({ data }: CustomerPurchaseItemViewProps) => {
   return (
-    <li className={styles.purchaseItem}>
+    <li className={styles.customerPurchaseItem}>
       <img src={data.imgSrc} alt={data.product} />
-      <div>
+      <div className={styles.infos}>
         <p className={styles.date}>{data.date} 주문</p>
         <p className={styles.product}>{data.product}</p>
         <p className={styles.price}>

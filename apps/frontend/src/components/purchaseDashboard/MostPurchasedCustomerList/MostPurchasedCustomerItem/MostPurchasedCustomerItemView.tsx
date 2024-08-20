@@ -1,3 +1,4 @@
+import styles from './MostPurchasedCustomerItemView.module.scss'
 import { Customer } from '../../../../types/customer'
 
 interface MostPurchasedCustomerItemViewProps {
@@ -7,11 +8,11 @@ interface MostPurchasedCustomerItemViewProps {
 
 const MostPurchasedCustomerItemView = ({ data, onItemClick }: MostPurchasedCustomerItemViewProps) => {
   return (
-    <li onClick={onItemClick}>
-      <p>id: {data.id}</p>
-      <p>name: {data.name}</p>
-      <p>count: {data.count}</p>
-      <p>totalAmount: {data.totalAmount}</p>
+    <li className={styles.mostPurchasedCustomerItem} onClick={onItemClick}>
+      <p>아이디: {data.id}</p>
+      <p>이름: {data.name}</p>
+      <p>구매 수: {data.count}</p>
+      <p>구매 가격: {data.totalAmount}</p>
     </li>
   )
 }
