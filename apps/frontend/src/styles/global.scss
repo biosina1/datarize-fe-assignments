@@ -1,0 +1,14 @@
+@use 'reset.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+
+  &:disabled {
+    pointer-events: none;
+  }
+}
