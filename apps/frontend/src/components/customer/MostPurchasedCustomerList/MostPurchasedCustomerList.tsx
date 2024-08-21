@@ -5,6 +5,7 @@ import { CustomerSearchFilterContext } from '../../../contexts/CustomerSearchFil
 import Spinner from '../../shared/Spinner'
 import ErrorFallback from '../../error/ErrorFallback'
 
+// 가장 많이 구매한 고객 목록
 const MostPurchasedCustomerList = () => {
   const { sortBy, name } = useContext(CustomerSearchFilterContext)
 

@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import { CustomerSearchFilterContext } from '../../../contexts/CustomerSearchFilterContext'
 import MostPurchasedCustomerNameSearchFormView from './MostPurchasedCustomerNameSearchFormView'
 
+// 가장 많이 구매한 고객 목록 - 이름 검색 폼
 const MostPurchasedCustomerNameSearchForm = () => {
   const { setName: setNameFilter } = useContext(CustomerSearchFilterContext)
 

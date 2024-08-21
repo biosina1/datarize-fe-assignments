@@ -3,10 +3,10 @@ import { CustomerPurchase } from '../../types/customer'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { fetchCustomerPurchaseList } from '../../apis/customer'
 
-const useFetchCustomerPurchaseList = (customerId?: string) =>
-  useSuspenseQuery<CustomerPurchase[] | null, AxiosError>({
+const useFetchCustomerPurchaseList = (customerId: string) =>
+  useSuspenseQuery<CustomerPurchase[], AxiosError>({
     queryKey: ['customerPurchaseList', customerId],
-    queryFn: () => (customerId ? fetchCustomerPurchaseList(customerId) : null),
+    queryFn: () => fetchCustomerPurchaseList(customerId),
   })
 
 export default useFetchCustomerPurchaseList

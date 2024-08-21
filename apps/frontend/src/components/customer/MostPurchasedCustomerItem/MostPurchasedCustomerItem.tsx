@@ -6,6 +6,7 @@ interface MostPurchasedCustomerItemProps {
   data: Customer
 }
 
+// 가장 많이 구매한 고객 목록 아이템
 const MostPurchasedCustomerItem = ({ data }: MostPurchasedCustomerItemProps) => {
   const navigate = useNavigate()
 

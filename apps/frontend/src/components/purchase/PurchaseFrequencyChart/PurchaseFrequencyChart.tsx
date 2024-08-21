@@ -9,6 +9,7 @@ const DEFAULT_DATE_RANGE = {
   endDate: '2024-07-31',
 }
 
+// 가격대별 구매 빈도 차트
 const PurchaseFrequencyChart = () => {
   const [dateRange, setDateRange] = useState(DEFAULT_DATE_RANGE)
 
@@ -18,6 +19,7 @@ const PurchaseFrequencyChart = () => {
     setDateRange(dateRange)
   }
 
+  // 차트 Legend 포맷터, 영문을 한글로 변환
   const legendFormatter: Formatter = (value) => {
     return value === 'count' ? '구매 수량' : value
   }

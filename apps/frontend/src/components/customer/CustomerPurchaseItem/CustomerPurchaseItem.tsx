@@ -5,6 +5,7 @@ interface CustomerPurchaseItemViewProps {
   data: CustomerPurchase
 }
 
+// 고객 구매 목록 아이템
 const CustomerPurchaseItem = ({ data }: CustomerPurchaseItemViewProps) => {
   const formattedData = {
     ...data,

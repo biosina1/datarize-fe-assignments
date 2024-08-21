@@ -9,7 +9,7 @@ interface CustomerPurchaseListViewProps {
 const CustomerPurchaseListView = ({ data }: CustomerPurchaseListViewProps) => {
   return (
     <ul className={styles.customerPurchaseList}>
-      {data?.map((purchase) => (
+      {data.map((purchase) => (
         <CustomerPurchaseItem key={purchase.date} data={purchase} />
       ))}
     </ul>

@@ -12,13 +12,17 @@ interface DateRangePickerProps {
 
 const TODAY = convertToYYMMDD(new Date())
 
+// 날짜 범위 선택
 const DateRangePicker = ({ defaultValue, onDateChange }: DateRangePickerProps) => {
   const [startDate, setStartDate] = useState(defaultValue?.startDate ?? TODAY)
   const [endDate, setEndDate] = useState(defaultValue?.endDate ?? TODAY)
 
+  // 시작 날짜 선택
   const handleStartDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newStartDate = e.target.value
     setStartDate(newStartDate)
+
+    // 시작 날짜가 종료 날짜보다 크면, 종료 날짜 변환
     if (newStartDate > endDate) setEndDate(newStartDate)
   }
 
@@ -27,6 +31,7 @@ const DateRangePicker = ({ defaultValue, onDateChange }: DateRangePickerProps) =
     setEndDate(newEndDate)
   }
 
+  // 시작 또는 종료 날짜가 변경되면 onDateChange 호출
   useEffect(() => {
     onDateChange?.({ startDate, endDate })
   }, [startDate, endDate])
