@@ -1,20 +1,25 @@
 import { CustomerPurchase } from '../../../../types/customer'
+import Image from '../../../shared/Image'
 import styles from './CustomerPurchaseItemView.module.scss'
 
 interface CustomerPurchaseItemViewProps {
-  data: CustomerPurchase
+  data: Omit<CustomerPurchase, 'price' | 'quantity'> & {
+    price: string
+    quantity: string
+  }
 }
 
-const CustomerPurchaseItemView = ({ data }: CustomerPurchaseItemViewProps) => {
+const CustomerPurchaseItemView = ({
+  data: { date, product, imgSrc, price, quantity },
+}: CustomerPurchaseItemViewProps) => {
   return (
     <li className={styles.customerPurchaseItem}>
-      <img src={data.imgSrc} alt={data.product} />
-      <div className={styles.infos}>
-        <p className={styles.date}>{data.date} 주문</p>
-        <p className={styles.product}>{data.product}</p>
-        <p className={styles.price}>
-          {data.price}원 <span className={styles.quantity}>{data.quantity}개</span>
-        </p>
+      <Image className={styles.thumbnail} src={imgSrc} alt={product} />
+      <div className={styles.infoWrapper}>
+        <p className={styles.date}>{date}</p>
+        <p className={styles.product}>{product}</p>
+        <p className={styles.price}>{price}</p>
+        <p className={styles.quantity}>{quantity}</p>
       </div>
     </li>
   )
