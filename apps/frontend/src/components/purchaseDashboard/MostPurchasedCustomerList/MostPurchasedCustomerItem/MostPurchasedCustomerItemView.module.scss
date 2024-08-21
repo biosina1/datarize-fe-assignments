@@ -2,6 +2,11 @@
   border: 1px solid lightpink;
   border-radius: 4px;
   padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lightgray;
+  }
 
   & > p:not(:last-of-type) {
     margin-bottom: 6px;

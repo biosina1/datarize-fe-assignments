@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import Select from '../../../shared/Select'
-import { CustomerSearchContext, SortOrder } from '../../../../contexts/dashboard/CustomerSearchContext'
+import { CustomerSearchContext, SortOrder } from '../../../contexts/dashboard/CustomerSearchContext'
+import Select from '../../shared/Select'
 
 const CustomerSortSelect = () => {
   const { setSortBy } = useContext(CustomerSearchContext)

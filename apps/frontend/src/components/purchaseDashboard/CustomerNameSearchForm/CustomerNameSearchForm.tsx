@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { CustomerSearchContext } from '../../../../contexts/dashboard/CustomerSearchContext'
+import { CustomerSearchContext } from '../../../contexts/dashboard/CustomerSearchContext'
 import CustomerNameSearchFormView from './CustomerNameSearchFormView'
 
 const CustomerNameSearchForm = () => {

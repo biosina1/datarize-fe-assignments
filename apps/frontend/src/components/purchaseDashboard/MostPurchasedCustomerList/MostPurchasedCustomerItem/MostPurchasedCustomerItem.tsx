@@ -13,7 +13,13 @@ const MostPurchasedCustomerItem = ({ data }: MostPurchasedCustomerItemProps) => 
     navigate(`/customers/${data.id}/purchases`)
   }
 
-  return <MostPurchasedCustomerItemView data={data} onItemClick={handleItemClick} />
+  const formattedData = {
+    ...data,
+    count: `${data.count.toLocaleString()}개`,
+    totalAmount: `${data.totalAmount.toLocaleString()}원`,
+  }
+
+  return <MostPurchasedCustomerItemView data={formattedData} onItemClick={handleItemClick} />
 }
 
 export default MostPurchasedCustomerItem

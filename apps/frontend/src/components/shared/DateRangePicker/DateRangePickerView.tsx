@@ -16,11 +16,11 @@ const DateRangePickerView = ({
   return (
     <div className={styles.dateRangePicker}>
       <label>
-        시작 날짜:
-        <input type="date" value={startDate} onChange={handleStartDateChange} />
+        시작 일
+        <input type="date" defaultValue={startDate} onChange={handleStartDateChange} />
       </label>
       <label>
-        종료 날짜:
+        종료 일
         <input type="date" min={startDate} value={endDate} onChange={handleEndDateChange} />
       </label>
     </div>
