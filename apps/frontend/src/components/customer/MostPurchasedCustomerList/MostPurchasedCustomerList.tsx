@@ -1,12 +1,12 @@
 import { useContext } from 'react'
 import useFetchMostPurchasedCustomerList from '../../../queries/useFetchMostPurchasedCustomerList'
 import MostPurchasedCustomerListView from './MostPurchasedCustomerListView'
-import { CustomerSearchContext } from '../../../contexts/dashboard/CustomerSearchContext'
+import { CustomerSearchFilterContext } from '../../../contexts/CustomerSearchFilterContext'
 import Spinner from '../../shared/Spinner'
 import ErrorFallback from '../../error/ErrorFallback'
 
 const MostPurchasedCustomerList = () => {
-  const { sortBy, name } = useContext(CustomerSearchContext)
+  const { sortBy, name } = useContext(CustomerSearchFilterContext)
 
   const { data, isLoading, error } = useFetchMostPurchasedCustomerList({
     sortBy,

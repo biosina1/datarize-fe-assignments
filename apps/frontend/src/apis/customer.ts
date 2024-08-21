@@ -6,6 +6,7 @@ interface FetchCustomerListParams {
   name: string
 }
 
+// 가장 많이 구매한 고객 목록 API
 export const fetchMostPurchasedCustomerList = ({ sortBy, name }: FetchCustomerListParams): Promise<Customer[]> => {
   return axiosClient
     .get(`/api/customers`, {
@@ -17,6 +18,7 @@ export const fetchMostPurchasedCustomerList = ({ sortBy, name }: FetchCustomerLi
     .then((response) => response.data)
 }
 
+// 고객 구매 목록 조회 API
 export const fetchCustomerPurchaseList = (customerId: string): Promise<CustomerPurchase[]> => {
   return axiosClient.get(`/api/customers/${customerId}/purchases`).then((response) => response.data)
 }

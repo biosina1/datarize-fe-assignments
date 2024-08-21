@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { CustomerSearchContext, SortOrder } from '../../../contexts/dashboard/CustomerSearchContext'
 import Select from '../../shared/Select'
+import { CustomerSearchFilterContext, SortOrder } from '../../../contexts/CustomerSearchFilterContext'
 
 const MostPurchasedCustomerSortSelect = () => {
-  const { setSortBy } = useContext(CustomerSearchContext)
+  const { setSortBy } = useContext(CustomerSearchFilterContext)
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortBy(e.target.value as SortOrder)

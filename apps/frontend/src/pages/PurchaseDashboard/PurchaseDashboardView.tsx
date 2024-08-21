@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
-import { CustomerSearchProvider } from '../../contexts/dashboard/CustomerSearchContext'
 import styles from './PurchaseDashboardView.module.scss'
 import Spinner from '../../components/shared/Spinner'
+import { CustomerSearchFilterProvider } from '../../contexts/CustomerSearchFilterContext'
 import QueryErrorBoundary from '../../components/error/QueryErrorBoundary'
 import PurchaseFrequencyChart from '../../components/purchase/PurchaseFrequencyChart'
 import MostPurchasedCustomerNameSearchForm from '../../components/customer/MostPurchasedCustomerNameSearchForm'
@@ -18,11 +18,11 @@ const PurchaseDashboardView = () => {
       </QueryErrorBoundary>
 
       <div className={styles.customerListWrapper}>
-        <CustomerSearchProvider>
+        <CustomerSearchFilterProvider>
           <MostPurchasedCustomerNameSearchForm />
           <MostPurchasedCustomerSortSelect />
           <MostPurchasedCustomerList />
-        </CustomerSearchProvider>
+        </CustomerSearchFilterProvider>
       </div>
     </div>
   )

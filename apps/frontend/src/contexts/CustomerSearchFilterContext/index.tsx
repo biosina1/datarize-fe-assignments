@@ -5,7 +5,7 @@ export enum SortOrder {
   'DESC' = 'desc',
 }
 
-interface CustomerSearchContextValue {
+interface CustomerSearchFilterContextValue {
   sortBy: SortOrder
   name: string
   setSortBy: React.Dispatch<React.SetStateAction<SortOrder>>
@@ -19,18 +19,18 @@ const initialState = {
   setName: () => {},
 }
 
-export const CustomerSearchContext = createContext<CustomerSearchContextValue>(initialState)
+export const CustomerSearchFilterContext = createContext<CustomerSearchFilterContextValue>(initialState)
 
 interface CustomerSearchProviderProps {
   children: React.ReactNode
 }
 
-export const CustomerSearchProvider = ({ children }: CustomerSearchProviderProps) => {
+export const CustomerSearchFilterProvider = ({ children }: CustomerSearchProviderProps) => {
   const [sortBy, setSortBy] = useState(initialState.sortBy)
   const [name, setName] = useState(initialState.name)
 
   return (
-    <CustomerSearchContext.Provider
+    <CustomerSearchFilterContext.Provider
       value={{
         sortBy,
         name,
@@ -39,6 +39,6 @@ export const CustomerSearchProvider = ({ children }: CustomerSearchProviderProps
       }}
     >
       {children}
-    </CustomerSearchContext.Provider>
+    </CustomerSearchFilterContext.Provider>
   )
 }

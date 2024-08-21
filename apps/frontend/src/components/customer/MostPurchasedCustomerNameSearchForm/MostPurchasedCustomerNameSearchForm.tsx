@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react'
-import { CustomerSearchContext } from '../../../contexts/dashboard/CustomerSearchContext'
+import { CustomerSearchFilterContext } from '../../../contexts/CustomerSearchFilterContext'
 import MostPurchasedCustomerNameSearchFormView from './MostPurchasedCustomerNameSearchFormView'
 
 const MostPurchasedCustomerNameSearchForm = () => {
-  const { setName: setNameFilter } = useContext(CustomerSearchContext)
+  const { setName: setNameFilter } = useContext(CustomerSearchFilterContext)
 
   const [name, setName] = useState('')
 

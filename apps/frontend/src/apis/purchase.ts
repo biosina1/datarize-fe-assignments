@@ -6,6 +6,7 @@ interface FetchPurchaseFrequencyParams {
   endDate: string
 }
 
+// 가격대별 구매 빈도 API
 export const fetchPurchaseFrequency = ({
   startDate,
   endDate,
