@@ -3,10 +3,10 @@ import { CustomerSearchProvider } from '../../contexts/dashboard/CustomerSearchC
 import styles from './PurchaseDashboardView.module.scss'
 import Spinner from '../../components/shared/Spinner'
 import QueryErrorBoundary from '../../components/error/QueryErrorBoundary'
-import CustomerSortSelect from '../../components/purchaseDashboard/CustomerSortSelect'
-import CustomerNameSearchForm from '../../components/purchaseDashboard/CustomerNameSearchForm'
-import PurchaseFrequencyChart from '../../components/purchaseDashboard/PurchaseFrequencyChart'
-import MostPurchasedCustomerList from '../../components/purchaseDashboard/MostPurchasedCustomerList'
+import PurchaseFrequencyChart from '../../components/purchase/PurchaseFrequencyChart'
+import MostPurchasedCustomerNameSearchForm from '../../components/customer/MostPurchasedCustomerNameSearchForm'
+import MostPurchasedCustomerSortSelect from '../../components/customer/MostPurchasedCustomerSortSelect'
+import MostPurchasedCustomerList from '../../components/customer/MostPurchasedCustomerList'
 
 const PurchaseDashboardView = () => {
   return (
@@ -19,8 +19,8 @@ const PurchaseDashboardView = () => {
 
       <div className={styles.customerListWrapper}>
         <CustomerSearchProvider>
-          <CustomerNameSearchForm />
-          <CustomerSortSelect />
+          <MostPurchasedCustomerNameSearchForm />
+          <MostPurchasedCustomerSortSelect />
           <MostPurchasedCustomerList />
         </CustomerSearchProvider>
       </div>

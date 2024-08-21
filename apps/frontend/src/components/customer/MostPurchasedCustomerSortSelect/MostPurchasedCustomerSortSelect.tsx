@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { CustomerSearchContext, SortOrder } from '../../../contexts/dashboard/CustomerSearchContext'
 import Select from '../../shared/Select'
 
-const CustomerSortSelect = () => {
+const MostPurchasedCustomerSortSelect = () => {
   const { setSortBy } = useContext(CustomerSearchContext)
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -17,4 +17,4 @@ const CustomerSortSelect = () => {
   return <Select options={options} onChange={handleSortChange} />
 }
 
-export default CustomerSortSelect
+export default MostPurchasedCustomerSortSelect

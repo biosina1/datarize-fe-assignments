@@ -1,5 +1,5 @@
 import styles from './MostPurchasedCustomerItemView.module.scss'
-import { Customer } from '../../../../types/customer'
+import { Customer } from '../../../types/customer'
 
 interface MostPurchasedCustomerItemViewProps {
   data: Omit<Customer, 'count' | 'totalAmount'> & {

@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import styles from './CustomerPurchaseDetailView.module.scss'
 import Spinner from '../../components/shared/Spinner'
 import QueryErrorBoundary from '../../components/error/QueryErrorBoundary'
-import CustomerPurchaseList from '../../components/customerPurchaseDetail/CustomerPurchaseList'
+import CustomerPurchaseList from '../../components/customer/CustomerPurchaseList'
 
 const CustomerPurchaseDetailView = () => {
   return (

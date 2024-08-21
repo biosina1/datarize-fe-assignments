@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
 import { CustomerSearchContext } from '../../../contexts/dashboard/CustomerSearchContext'
-import CustomerNameSearchFormView from './CustomerNameSearchFormView'
+import MostPurchasedCustomerNameSearchFormView from './MostPurchasedCustomerNameSearchFormView'
 
-const CustomerNameSearchForm = () => {
+const MostPurchasedCustomerNameSearchForm = () => {
   const { setName: setNameFilter } = useContext(CustomerSearchContext)
 
   const [name, setName] = useState('')
@@ -16,7 +16,13 @@ const CustomerNameSearchForm = () => {
     setName(e.target.value)
   }
 
-  return <CustomerNameSearchFormView name={name} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} />
+  return (
+    <MostPurchasedCustomerNameSearchFormView
+      name={name}
+      onInputChange={handleInputChange}
+      onFormSubmit={handleFormSubmit}
+    />
+  )
 }
 
-export default CustomerNameSearchForm
+export default MostPurchasedCustomerNameSearchForm

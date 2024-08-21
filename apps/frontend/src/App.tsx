@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import Layout from './components/layout/Layout'
+import NotFound from './pages/NotFound'
 import PurchaseDashboard from './pages/PurchaseDashboard'
 import CustomerPurchaseDetail from './pages/CustomerPurchaseDetail'
-import NotFound from './pages/NotFound'
-import Layout from './components/layout'
 
 function App() {
   return (

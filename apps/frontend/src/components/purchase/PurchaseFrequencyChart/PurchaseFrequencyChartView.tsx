@@ -3,7 +3,7 @@ import { PurchaseFrequency } from '../../../types/purchase'
 import { Formatter } from 'recharts/types/component/DefaultLegendContent'
 import { Bar, BarChart, CartesianGrid, Label, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import DateRangePicker, { DateRange, OnDateChange } from '../../shared/DateRangePicker'
-import PurchaseFrequencyTooltip from './PurchaseFrequencyTooltip'
+import PurchaseFrequencyChartTooltip from '../PurchaseFrequencyChartTooltip'
 
 interface PurchaseFrequencyChartViewProps {
   data?: PurchaseFrequency[]
@@ -35,7 +35,7 @@ const PurchaseFrequencyChartView = ({
             <Label value="(원)" position="insideBottomRight" dx={10} fontSize={12} />
           </XAxis>
           <YAxis fontSize={12} />
-          <Tooltip content={<PurchaseFrequencyTooltip />} />
+          <Tooltip content={<PurchaseFrequencyChartTooltip />} />
           <Legend wrapperStyle={{ paddingBottom: 10 }} formatter={legendFormatter} verticalAlign="top" align="right" />
           <Bar dataKey="count" fill="#8884d8" />
         </BarChart>

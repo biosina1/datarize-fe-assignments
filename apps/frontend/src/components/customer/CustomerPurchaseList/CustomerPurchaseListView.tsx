@@ -1,6 +1,6 @@
 import styles from './CustomerPurchaseListView.module.scss'
 import { CustomerPurchase } from '../../../types/customer'
-import CustomerPurchaseItem from './CustomerPurchaseItem'
+import CustomerPurchaseItem from '../CustomerPurchaseItem'
 
 interface CustomerPurchaseListViewProps {
   data: CustomerPurchase[]

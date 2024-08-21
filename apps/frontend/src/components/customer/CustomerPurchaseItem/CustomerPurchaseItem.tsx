@@ -1,4 +1,4 @@
-import { CustomerPurchase } from '../../../../types/customer'
+import { CustomerPurchase } from '../../../types/customer'
 import CustomerPurchaseItemView from './CustomerPurchaseItemView'
 
 interface CustomerPurchaseItemViewProps {

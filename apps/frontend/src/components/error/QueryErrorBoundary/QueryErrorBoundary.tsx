@@ -1,16 +1,13 @@
-import { QueryErrorResetBoundary } from "@tanstack/react-query";
-import ErrorBoundary from "./ErrorBoundary";
-import ErrorFallback from "../ErrorFallback";
+import { QueryErrorResetBoundary } from '@tanstack/react-query'
+import ErrorFallback from '../ErrorFallback'
+import ErrorBoundary from '../ErrorBoundary'
 
 interface QueryErrorBoundary {
-  children: React.ReactNode;
-  fallbackComponent?: React.ElementType;
+  children: React.ReactNode
+  fallbackComponent?: React.ElementType
 }
 
-const QueryErrorBoundary = ({
-  children,
-  fallbackComponent: FallbackComponent = ErrorFallback,
-}: QueryErrorBoundary) => {
+const QueryErrorBoundary = ({ children, fallbackComponent: FallbackComponent = ErrorFallback }: QueryErrorBoundary) => {
   return (
     <QueryErrorResetBoundary>
       {({ reset }) => (
@@ -19,7 +16,7 @@ const QueryErrorBoundary = ({
         </ErrorBoundary>
       )}
     </QueryErrorResetBoundary>
-  );
-};
+  )
+}
 
-export default QueryErrorBoundary;
+export default QueryErrorBoundary

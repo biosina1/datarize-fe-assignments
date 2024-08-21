@@ -1,6 +1,6 @@
-import { CustomerPurchase } from '../../../../types/customer'
-import Image from '../../../shared/Image'
 import styles from './CustomerPurchaseItemView.module.scss'
+import Image from '../../shared/Image'
+import { CustomerPurchase } from '../../../types/customer'
 
 interface CustomerPurchaseItemViewProps {
   data: Omit<CustomerPurchase, 'price' | 'quantity'> & {

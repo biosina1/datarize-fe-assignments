@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Customer } from '../../../../types/customer'
+import { Customer } from '../../../types/customer'
 import MostPurchasedCustomerItemView from './MostPurchasedCustomerItemView'
 
 interface MostPurchasedCustomerItemProps {

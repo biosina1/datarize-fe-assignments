@@ -1,13 +1,17 @@
-import styles from './CustomerNameSearchFormView.module.scss'
-interface CustomerNameSearchFormViewProps {
+import styles from './MostPurchasedCustomerNameSearchFormView.module.scss'
+interface MostPurchasedCustomerNameSearchFormViewProps {
   name: string
   onFormSubmit: React.FormEventHandler<HTMLFormElement>
   onInputChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
-const CustomerNameSearchFormView = ({ name, onFormSubmit, onInputChange }: CustomerNameSearchFormViewProps) => {
+const MostPurchasedCustomerNameSearchFormView = ({
+  name,
+  onFormSubmit,
+  onInputChange,
+}: MostPurchasedCustomerNameSearchFormViewProps) => {
   return (
-    <form className={styles.customerNameSearchForm} onSubmit={onFormSubmit}>
+    <form className={styles.mostPurchasedCustomerNameSearchForm} onSubmit={onFormSubmit}>
       <input
         className={styles.nameInput}
         value={name}
@@ -21,4 +25,4 @@ const CustomerNameSearchFormView = ({ name, onFormSubmit, onInputChange }: Custo
   )
 }
 
-export default CustomerNameSearchFormView
+export default MostPurchasedCustomerNameSearchFormView
