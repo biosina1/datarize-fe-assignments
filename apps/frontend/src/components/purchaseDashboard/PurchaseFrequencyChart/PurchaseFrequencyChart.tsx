@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { DateRange } from '../../shared/DateRangePicker'
+import { Formatter } from 'recharts/types/component/DefaultLegendContent'
 import PurchaseFrequencyChartView from './PurchaseFrequencyChartView'
 import useFetchPurchaseFrequency from '../../../queries/useFetchPurchaseFrequency'
 
@@ -17,8 +18,17 @@ const PurchaseFrequencyChart = () => {
     setDateRange(dateRange)
   }
 
+  const legendFormatter: Formatter = (value) => {
+    return value === 'count' ? '구매 수량' : value
+  }
+
   return (
-    <PurchaseFrequencyChartView data={data} defaultDateRange={DEFAULT_DATE_RANGE} onDateChange={handleDateChange} />
+    <PurchaseFrequencyChartView
+      data={data}
+      defaultDateRange={DEFAULT_DATE_RANGE}
+      onDateChange={handleDateChange}
+      legendFormatter={legendFormatter}
+    />
   )
 }
 
